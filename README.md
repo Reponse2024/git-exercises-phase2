@@ -1,6 +1,6 @@
 # Git Exercise
 ## Part 1
-### top 3 challenges
+### Top 3 challenges
 ```bash
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 $ touch test{1..4}.md
@@ -156,3 +156,64 @@ pick 78e6a28 # Create third and fourth file
 # However, if you remove everything, the rebase will be aborted.
 #
 ```
+### Challenge 6
+``` bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ touch unwanted.txt
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-pha
+#         message (or the oneline, if no original merge se2 (main)
+$ echo "This has to be deleted"> unwanted.txt
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+#         message (or the oneline, if no original merge $ git add unwanted.txt
+warning: in the working copy of 'unwanted.txt', LF will be replaced by CRLF the next time Git touches it        
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git commit -m "Unwanted commit"
+[main 5003c85] Unwanted commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 unwanted.txt
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git rebase -i HEAD~1
+Successfully rebased and updated refs/heads/main.       
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git rebase -i HEAD~1
+Successfully rebased and updated refs/heads/main.       
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git log
+commit b0ec138c3c5d405f47eb65397bd3962f9aec9019 (HEAD ->
+ main)
+Author: Reponse <reponse.iduha2023@kepler.org>
+Date:   Tue Jul 22 15:30:05 2025 +0200
+
+    chore: Create third file
+
+    chore: Create fourth file
+
+commit 9cb2302b784c47d00dabef4cc6c4089a9940deb2
+Author: Reponse <reponse.iduha2023@kepler.org>
+Date:   Tue Jul 22 14:53:57 2025 +0200
+
+    chore: Create second file
+
+#         message (or the oneline, if no original merge commit 881e61dcd186252c5df451e3779ba30632b9f6e5
+Author: Reponse <reponse.iduha2023@kepler.org>
+Date:   Tue Jul 22 14:53:56 2025 +0200
+
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git commit -m "Drop an unwanted commit"
+[main fa663ae] Drop an unwanted commit
+ 1 file changed, 205 insertions(+)
+ create mode 100644 README.md
+```
+### Challenge 7
+```bash
+
