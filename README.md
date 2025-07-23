@@ -1,6 +1,6 @@
 # Git Exercise
 ## Part 1
-### Top 3 challenges
+### Getting started
 ```bash
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 $ touch test{1..4}.md
@@ -16,7 +16,9 @@ git add test3.md && git commit -m "chore: Create third and fourth files"
 [main 4f8b9d0] chore: Create third and fourth files
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 test3.md
-
+```
+### Challenge 1
+``` bash
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 $ git log
 commit 4f8b9d0b5580a6e745eb97ccf7bd697591c61be2 (HEAD -> main)
@@ -64,38 +66,9 @@ $ git commit --amend -m "Create third and fourth file"
  create mode 100644 README.md
  create mode 100644 test3.md
  create mode 100644 test4.md
-
-User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
-$ git plog
-git: 'plog' is not a git command. See 'git --help'.
-
-The most similar command is
-        log
-
-User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
-$ git log -h
-usage: git log [<options>] [<revision-range>] [[--] <path>...]
-   or: git show [<options>] <object>...
-
-    -q, --[no-]quiet      suppress diff output
-    --[no-]source         show source
-    --[no-]use-mailmap    use mail map file
-    --[no-]mailmap        alias of --use-mailmap
-    --clear-decorations   clear all previously-defined decoration filters
-    --[no-]decorate-refs <pattern>
-# b, break = stop here (continue rebase later with 'git rebase --continue')
-                          only decorate refs that match <pattern>
-    --[no-]decorate-refs-exclude <pattern>
-                          do not decorate refs that match <pattern>
-    --[no-]decorate[=...] decorate options
-    -L <range:file>       trace the evolution of line range <start>,<end> or function :<funcname> in <file>
-
-
-User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
-$ git log ---oneline
-fatal: unrecognized argument: ---oneline
-
-chore: Create second file
+```
+### Challenge 2
+``` bash
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 $ git log --oneline
 593eebd (HEAD -> main) Create third and fourth file
@@ -123,7 +96,9 @@ $ git commit --amend
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main|REBASE 1/2)
 $ git rebase --continue
 Successfully rebased and updated refs/heads/main.
-
+```
+### Challenge 3
+```bash
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 $ git log
 commit 78e6a28aca50c9d8915ac937a3bed8d7ec4a2246 (HEAD -> main)
@@ -155,6 +130,44 @@ pick 78e6a28 # Create third and fourth file
 #
 # However, if you remove everything, the rebase will be aborted.
 #
+```
+### Challenge 4
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git reset HEAD~1
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git add test3.md
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git commit -m "chore: Create third file"
+[main d59f741] chore: Create third file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test3.md
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git add test4.md
+#         message (or the oneline, if no original merge 
+#
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git commit -m "chore: Create fourth file"
+[main 0ac1e72] chore: Create fourth file
+ 1 file changed, 0 insertions(+), 0 deletions(-)        
+ create mode 100644 test4.md
+```
+### Challenge 5
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git rebase -i HEAD~2
+[detached HEAD b0ec138] chore: Create third file
+ Date: Tue Jul 22 15:30:05 2025 +0200
+ 2 files changed, 0 insertions(+), 0 deletions(-)       
+ create mode 100644 test3.md
+ create mode 100644 test4.md
+Successfully rebased and updated refs/heads/main.       
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 ```
 ### Challenge 6
 ``` bash
