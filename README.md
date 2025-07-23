@@ -1,4 +1,4 @@
-# Git Exercise
+# Advanced Git Challenges
 ## Part 1
 ### Getting started
 ```bash
