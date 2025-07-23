@@ -216,4 +216,113 @@ $ git commit -m "Drop an unwanted commit"
 ```
 ### Challenge 7
 ```bash
+#         message (or the oneline, if no original merge 
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git log --oneline
+fa663ae (HEAD -> main) Drop an unwanted commit
+b0ec138 chore: Create third file
+9cb2302 chore: Create second file
+881e61d chore: Create initial file
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git rebase -i HEAD~3
+Successfully rebased and updated refs/heads/main.       
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+```
+### Challenge 8
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git checkout -b ft/branch
+Switched to a new branch 'ft/branch'
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/branch)
+$ touch 'test5.md'
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/branch)
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/branch)
+$ git commit -m "Implemented test 5"
+[ft/branch 3daee78] Implemented test 5
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5.md
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 3 and 3 different commits each, respectively.  
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git log ft/branch
+commit 3daee78e5cb45a11b38074de9048549adf753931 (ft/branch)
+Author: Reponse <reponse.iduha2023@kepler.org>
+Date:   Wed Jul 23 16:09:21 2025 +0200
+
+    Implemented test 5
+
+commit dfbfc4844ef1de9ad2691165579534fbc8c47f55 (HEAD ->
+ main)
+Author: Reponse <reponse.iduha2023@kepler.org>
+Date:   Tue Jul 22 14:53:57 2025 +0200
+
+    chore: Create second file
+
+commit 3a03e27c1bd6ae5d8829eda61444df8b32446efe
+Author: Reponse <reponse.iduha2023@kepler.org>
+Date:   Tue Jul 22 15:49:42 2025 +0200
+
+    Drop an unwanted commit
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git cherry-pick 3daee78e5cb45a11b38074de9048549adf753931
+[main 04add2c] Implemented test 5
+ Date: Wed Jul 23 16:09:21 2025 +0200
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test5.md
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2
+```
+### Challenge 9
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git log --graph
+* commit 04add2c1c2235afd8bb8ea5e7ee3bd45a39495e6 (HEAD -> main)
+| Author: Reponse <reponse.iduha2023@kepler.org>
+| Date:   Wed Jul 23 16:09:21 2025 +0200
+| 
+|     Implemented test 5
+| 
+* commit dfbfc4844ef1de9ad2691165579534fbc8c47f55
+| Author: Reponse <reponse.iduha2023@kepler.org>
+| Date:   Tue Jul 22 14:53:57 2025 +0200
+| 
+|     chore: Create second file
+| 
+* commit 3a03e27c1bd6ae5d8829eda61444df8b32446efe
+| Author: Reponse <reponse.iduha2023@kepler.org>
+| Date:   Tue Jul 22 15:49:42 2025 +0200
+|
+|     Drop an unwanted commit
+```
+### Challenge 10
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git reflog
+04add2c (HEAD -> main) HEAD@{0}: cherry-pick: Implemented test 5
+dfbfc48 HEAD@{1}: checkout: moving from ft/branch to main
+3daee78 (ft/branch) HEAD@{2}: commit: Implemented test 5
+dfbfc48 HEAD@{3}: checkout: moving from main to ft/branch
+dfbfc48 HEAD@{4}: rebase (finish): returning to refs/heads/main
+dfbfc48 HEAD@{5}: rebase (pick): chore: Create second file
+3a03e27 HEAD@{6}: rebase (pick): Drop an unwanted commit
+be0700a HEAD@{7}: rebase (pick): chore: Create third file
+881e61d HEAD@{8}: rebase (start): checkout HEAD~3       
+fa663ae HEAD@{9}: rebase (abort): returning to refs/heads/main
+911ffa8 (origin/main) HEAD@{10}: rebase (start): checkout refs/remotes/origin/main
+:
+```
 
