@@ -338,4 +338,97 @@ fa663ae HEAD@{9}: rebase (abort): returning to refs/heads/main
 911ffa8 (origin/main) HEAD@{10}: rebase (start): checkout refs/remotes/origin/main
 :
 ```
+## Part 2
+### Challenge 1
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git checkout -b ft/new-feature
+Switched to a new branch 'ft/new-feature'
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-feature)
+$ 
+```
+### Challenge 2
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-feature)
+$ echo "This is a new feature." > feature.txt
+git add feature.txt
+git commit -m "feat: Implemented core functionality for new featuree"
+warning: in the working copy of 'feature.txt', LF will be replaced by CRLF the next time Git touches it
+[ft/new-feature b6316f1] feat: Implemented core functionality for new featuree
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+ ```
+ ### Challenge 3
+ ``` bash
+ User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-feature)
+$ git checkout main
+echo "Welcome to the project!" > readme.txt
+git add readme.txt
+git commit -m "docs: Updated project readme"
+M       README.md
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 5 and 7 different commits each, respectively.  
+  (use "git pull" if you want to integrate the remote branch with yours)
+warning: in the working copy of 'readme.txt', LF will be replaced by CRLF the next time Git touches it
+[main ef036ac] docs: Updated project readme
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+ ```
+ ### Challenge 4
+ ```bash
+ User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git push origin ft/new-feature
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 2.24 KiB | 382.00 KiB/s, done.
+Merge branch 'ft/new-feature' of https://github.com/RepoTotal 9 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/new-feature' on GitHub by visiting:
+remote:      https://github.com/Reponse2024/git-exercises-phase2/pull/new/ft/new-feature
+remote:
+To https://github.com/Reponse2024/git-exercises-phase2.git
+ * [new branch]      ft/new-feature -> ft/new-feature   
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git pull origin ft/new-feature
+From https://github.com/Reponse2024/git-exercises-phase2
+ * branch            ft/new-feature -> FETCH_HEAD       
+Merge made by the 'ort' strategy.
+ feature.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 feature.txt
+ ```
+ ### challenge 5
+ ``` bash
+ User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git branch -d ft/new-feature
+Deleted branch ft/new-feature (was b6316f1).
+```
+### Challenge 6
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git log --oneline
+e94ac91 (HEAD -> main) Merge branch 'ft/new-feature' of https://github.com/Reponse2024/git-exercises-phase2     
+ef036ac docs: Updated project readme
+b6316f1 (origin/ft/new-feature) feat: Implemented core functionality for new featuree
+d8ef7d5 Solved all challenges in part 1
+04add2c Implemented test 5
+dfbfc48 chore: Create second file
+3a03e27 Drop an unwanted commit
+be0700a chore: Create third file
+881e61d chore: Create initial file
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git checkout -b ft/new-branch-from-commit ef036ac
+M       README.md
+Switched to a new branch 'ft/new-branch-from-commit'
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-branch-from-commit)
+$
+```
 
