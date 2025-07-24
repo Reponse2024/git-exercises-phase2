@@ -184,13 +184,32 @@ $ git log --online
 fatal: unrecognized argument: --online
 
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
+$ git commit -m "Saved cahnges before checking out has commit"
+[ft/improved-branch-name 92fd334] Saved cahnges before checking out has commit
+ 1 file changed, 40 insertions(+)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
+$ git log --online
+fatal: unrecognized argument: --online
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
 $ git log --oneline
 92fd334 (HEAD -> ft/improved-branch-name) Saved cahnges before checking out has commit
 29aa7c0 Added challenge 7 in readme file
 ffb33e2 (main) Merge branch 'ft/new-branch-from-commit'
 fe456fd (origin/ft/new-branch-from-commit) Created new branch from commit
 e94ac91 Merge branch 'ft/new-feature' of https://github.com/Reponse2024/git-exercises-phase2
+92fd334 (HEAD -> ft/improved-branch-name) Saved cahnges before checking out has commit
+29aa7c0 Added challenge 7 in readme file
+ffb33e2 (main) Merge branch 'ft/new-branch-from-commit'
+fe456fd (origin/ft/new-branch-from-commit) Created new branch from commit
+e94ac91 Merge branch 'ft/new-feature' of https://github.com/Reponse2024/git-exercises-phase2
 ef036ac docs: Updated project readme
+b6316f1 (origin/ft/new-feature) feat: Implemented core functionality for new featuree  
 b6316f1 (origin/ft/new-feature) feat: Implemented core functionality for new featuree  
 d8ef7d5 Solved all challenges in part 1
 04add2c Implemented test 5
