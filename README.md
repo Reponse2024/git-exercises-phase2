@@ -488,4 +488,63 @@ $ git branch
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)  
 $
 ```
+### Challenge 10
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
+$ git commit -m "Saved cahnges before checking out has commit"
+[ft/improved-branch-name 92fd334] Saved cahnges before checking out has commit
+ 1 file changed, 40 insertions(+)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
+$ git log --online
+fatal: unrecognized argument: --online
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
+$ git log --oneline
+92fd334 (HEAD -> ft/improved-branch-name) Saved cahnges before checking out has commit
+29aa7c0 Added challenge 7 in readme file
+ffb33e2 (main) Merge branch 'ft/new-branch-from-commit'
+fe456fd (origin/ft/new-branch-from-commit) Created new branch from commit
+e94ac91 Merge branch 'ft/new-feature' of https://github.com/Reponse2024/git-exercises-phase2
+ef036ac docs: Updated project readme
+b6316f1 (origin/ft/new-feature) feat: Implemented core functionality for new featuree  
+d8ef7d5 Solved all challenges in part 1
+04add2c Implemented test 5
+dfbfc48 chore: Create second file
+3a03e27 Drop an unwanted commit
+be0700a chore: Create third file
+881e61d chore: Create initial file
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)  
+$ git checkout 04add2
+Note: switching to '04add2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 04add2c Implemented test 5
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 ((04add2c...))
+$ git checkout -b temp-branch
+Switched to a new branch 'temp-branch'
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (temp-branch)
+$
+```
+
 
