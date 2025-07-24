@@ -431,4 +431,61 @@ Switched to a new branch 'ft/new-branch-from-commit'
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-branch-from-commit)
 $
 ```
+### Challenge 7
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-branch-from-commit)
+$ git checkout main
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 8 and 7 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git merge ft/new-branch-from-commit
+Merge made by the 'ort' strategy.
+ README.md | 96 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 96 insertions(+)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git add .
+```
+### Challenge 8
+```bash
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git checkout ft/new-branch-from-commit
+M       README.md
+Switched to branch 'ft/new-branch-from-commit'
+Your branch is up to date with 'origin/ft/new-branch-from-commit'.
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-branch-from-commit)
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-branch-from-commit)
+$ git commit -m "Added challenge 7 in readme file"
+[ft/new-branch-from-commit ab3311d] Added challenge 7 in readme file
+ 1 file changed, 18 insertions(+)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-branch-from-commit)
+$ git rebase main
+Successfully rebased and updated refs/heads/ft/new-branch-from-commit.
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-branch-from-commit)
+$
+```
+### Challenge 9
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/new-branch-from-commit)
+
+$ git branch -m ft/new-branch-from-commit ft/improved-branch-name
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)
+$ git branch
+  ft/branch
+* ft/improved-branch-name
+  main
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/improved-branch-name)  
+$
+```
 
