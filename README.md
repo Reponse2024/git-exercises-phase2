@@ -646,6 +646,114 @@ git commit
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 $
 ```
+### Challenge 5
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git log --oneline
+43140e6 (HEAD -> main) Merge branch 'ft/conflict'
+12362c5 fix: Update conflict.txt in main
+43140e6 (HEAD -> main) Merge branch 'ft/conflict'       
+12362c5 fix: Update conflict.txt in main
+49a9b2c (ft/conflict) feat: Update conflict.txt in feature branch
+e30871d chore: Add conflict.txt to main
+43459ee Resolved conflicts
+63c768f Modified challenge 1 of part
+ffb33e2 Merge branch 'ft/new-branch-from-commit'        
+fe456fd (origin/ft/new-branch-from-commit) Created new branch from commit
+e94ac91 Merge branch 'ft/new-feature' of https://github.com/Reponse2024/git-exercises-phase2
+ef036ac docs: Updated project readme
+b6316f1 (origin/ft/new-feature) feat: Implemented core functionality for new featuree
+d8ef7d5 Solved all challenges in part 1
+04add2c (temp-branch) Implemented test 5
+dfbfc48 chore: Create second file
+3a03e27 Drop an unwanted commit
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git checkout 04add2c      
+error: Your local changes to the following files would be overwritten by checkout:
+        README.md
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git commit -m 'Modifies readme file"
+> git commit -m 'Modifies readme file'
+> git commit -m 'Modifies readme file"
+git commit -m "Modifies readme file"
+> ^C
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git commit -m "Modifies readme file"
+[main 5b8a8db] Modifies readme file
+ 1 file changed, 79 insertions(+), 11 deletions(-)      
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git checkout 04add2c      
+Note: switching to '04add2c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 04add2c Implemented test 5
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 ((04add2c...))
+$ git checkout main
+Previous HEAD position was 04add2c Implemented test 5
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 17 and 7 different commits each, respectively. 
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$
+```
+###  Challenge 6
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ echo "/tmp" >> .gitignore
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git add .gitignore
+git commit -m "chore: Ignore temp files in /tmp"        
+warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+[main 006fc86] chore: Ignore temp files in /tmp
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$
+```
+### Challenge 7
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git tag v1.0
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git tag -a v1.0 -m "Release version 1.0"
+fatal: tag 'v1.0' already exists
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+```
+### Challenge 8
+```bash
+
+
+
 
 
 
