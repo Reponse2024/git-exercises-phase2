@@ -246,26 +246,94 @@ Switched to a new branch 'temp-branch'
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (temp-branch)
 $
 ```
-## part 3
-### Challenge 1
-```bash
-```
 ## Part 3
 ### Challenge 1
 ```bash
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 $ git stash
-Saved working directory and index state WIP on main: ffb33e2 Merge branch 'ft/new-branch-from-commit'
+Saved working directory and index state WIP on main: 43459ee Resolved conflicts
 
-<<<<<<< Updated upstream
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 $ git stash list
-stash@{0}: WIP on main: ffb33e2 Merge branch 'ft/new-branch-from-commit'
-stash@{1}: WIP on temp-branch: 04add2c Implemented test 5
+stash@{0}: WIP on main: 43459ee Resolved conflicts
+```
+### Challenge 2
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git stash pop
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 12 and 7 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (e0879e2b0c1e4db923bae254199d5419a1fb5ebd)
 
 User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
-$ 
-```
+$ git stash apply
+No stash entries found.
 
-=======
->>>>>>> Stashed changes
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$
+```
+### Challenge 3
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ echo "Original line" > conflict.txt
+git add conflict.txt
+git commit -m "chore: Add conflict.txt to main"
+warning: in the working copy of 'conflict.txt', LF will be replaced by CRLF the next time Git touches it
+[main e30871d] chore: Add conflict.txt to main
+ 1 file changed, 1 insertion(+)
+ create mode 100644 conflict.txt
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git checkout -b ft/conflict
+Switched to a new branch 'ft/conflict'
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/conflict)
+$ echo "Change from feature branch" > conflict.txt
+git add conflict.txt
+git commit -m "feat: Update conflict.txt in feature branch"
+warning: in the working copy of 'conflict.txt', LF will be replaced by CRLF the next time Git touches it        
+[ft/conflict 49a9b2c] feat: Update conflict.txt in feature branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (ft/conflict)
+$ git checkout main
+echo "Change from main branch" > conflict.txt
+git add conflict.txt
+git commit -m "fix: Update conflict.txt in main"        
+M       README.md
+Switched to branch 'main'
+Your branch and 'origin/main' have diverged,
+and have 13 and 7 different commits each, respectively. 
+  (use "git pull" if you want to integrate the remote branch with yours)
+warning: in the working copy of 'conflict.txt', LF will be replaced by CRLF the next time Git touches it        
+[main 12362c5] fix: Update conflict.txt in main
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git merge ft/conflict
+Auto-merging conflict.txt
+CONFLICT (content): Merge conflict in conflict.txt      
+Automatic merge failed; fix conflicts and then commit the result.
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main|MERGING)
+$ git merge ft/conflict
+```
+### Challenge 4
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main|MERGING)
+$ git add conflict.txt
+git commit
+[main 43140e6] Merge branch 'ft/conflict'
+```
+### challenge 5
+```bash
+
