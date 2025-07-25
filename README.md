@@ -751,6 +751,73 @@ User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
 ```
 ### Challenge 8
 ```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git tag
+v1.0
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git tag -d v1.0
+Deleted tag 'v1.0' (was 006fc86)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git push origin :refs/tags/v1.0
+To https://github.com/Reponse2024/git-exercises-phase2.git
+ - [deleted]         v1.0
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$
+```
+### Challenge 9
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git commit -m "Added challenge 8"
+[main a1a91ec] Added challenge 8
+ 1 file changed, 121 insertions(+)
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git pull
+Auto-merging README.md
+CONFLICT (add/add): Merge conflict in README.md       
+Automatic merge failed; fix conflicts and then commit the result.
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main|MERGING)
+$ git add .
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main|MERGING)
+$ git commit -m "merged the changes by resolving the c
+conflicts"
+[main 2cf5242] merged the changes by resolving the cconflicts
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git push origin main
+Enumerating objects: 39, done.
+Counting objects: 100% (38/38), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (27/27), done.
+Writing objects: 100% (31/31), 3.37 KiB | 215.00 KiB/s, done.
+Total 31 (delta 15), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (15/15), completed with 1 local object.
+To https://github.com/Reponse2024/git-exercises-phase2.git
+   c069df6..2cf5242  main -> main
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$
+```
+### Challenge 10
+```bash
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$ git pull origin main
+From https://github.com/Reponse2024/git-exercises-phase2
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+User@DESKTOP-PQL5SE4 MINGW64 /c/TheGym/git-exercises-phase2 (main)
+$
+```
+
 
 
 
